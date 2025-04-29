@@ -172,7 +172,7 @@ Built for serious trading and AI-driven market analysis 📈🚀
   <a href="https://github.com/Rami8612/asesor-experto-gpt-mt5/releases/download/v1.0.0/@Rami8612_DEMO_asesor_experto_gpt_mt5.mp4" target="_blank">
     <img
       src="https://github.com/Rami8612/asesor-experto-gpt-mt5/releases/download/v1.0.0/thumb.png"
-      alt="Demo icon"
+      alt="video icon"
       width="200"
     />
     <strong style="font-size:1.2em; margin-left:8px;">Demo en vídeo</strong>
