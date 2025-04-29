@@ -135,6 +135,18 @@ python agente_telegram/ae_telegram.py
 
 This project is licensed under the MIT License.
 
+## 🎬 Demo en vídeo
+
+<p align="center">
+  <video
+    src="https://github.com/Rami8612/asesor-experto-gpt-mt5/releases/download/v1.0.0/@Rami8612_DEMO_asesor_experto_gpt_mt5.mp4"
+    controls
+    width="640">
+    Tu navegador no soporta la etiqueta de vídeo.
+  </video>
+</p>
+
+
 
 👩‍💼 Author
 
