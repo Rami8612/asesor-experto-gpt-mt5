@@ -1,0 +1,45 @@
+# Ignore general Python files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.log
+*.sqlite3
+
+# Ignore virtual environments
+.env/
+.venv/
+env/
+venv/
+
+# Ignore sensitive .env files (real API keys)
+**/.env
+
+# Ignore data and output folders
+agente_macro/logs/
+agente_noticias/logs/
+agente_tecnico/logs/
+recomendacion_global/
+*.csv
+*.json
+*.txt
+
+# Ignore backup or temp files
+*.bak
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+
+# Ignore compiled files
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore bat launcher logs if any
+*.bat.log
+
+# Ignore pipreqs cache
+pipreqs.log

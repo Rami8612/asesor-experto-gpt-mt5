@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%F0%9F%A4%96-asesor-experto-gpt--metatrader-5">🤖 Asesor Experto GPT + MetaTrader 5</h1>
+<p>Este proyecto es un sistema completo de asesoramiento financiero automatizado que combina:</p>
+<ul>
+<li>Inteligencia Artificial (OpenAI GPT)</li>
+<li>Análisis de noticias, indicadores macroeconómicos y técnicos</li>
+<li>Ejecución de operaciones en MetaTrader 5 (MT5)</li>
+<li>Envío de resúmenes detallados por Telegram</li>
+</ul>
+<hr>
+<h2 id="%F0%9F%93%81-estructura-de-carpetas">📁 Estructura de Carpetas</h2>
+<pre class="hljs"><code><div>asessor experto gpt/
+├── ae_global.py                # Coordinador principal de los 3 agentes
+├── ae_programado.py            # Ejecución automatizada por horarios
+├── ae_ejecucion_unica.py       # Ejecución manual una sola vez
+├── bot_mt5.py                  # Ejecución de operaciones en MT5
+├── Ejecutar_Asesor.bat         # Lanzador rápido manual
+├── Ejecutar_ae_programado.bat  # Lanzador rápido programado
+├── requirements.txt
+├── recomendacion_global/      # Recomendaciones consolidadas
+│
+├── agente_macro/
+│   ├── ae_macro_2.0.py
+│   ├── logs/...
+│   └── .env (FRED_API_KEY)
+│
+├── agente_noticias/
+│   ├── ae_gpt.py
+│   ├── logs/...
+│   └── .env (OPENAI_API_KEY)
+│
+├── agente_tecnico/
+│   ├── ae_tecnico.py
+│   ├── logs/...
+│
+├── agente_telegram/
+│   ├── ae_telegram.py
+│   └── .env (TELEGRAM_TOKEN, TELEGRAM_CHAT_ID)
+</div></code></pre>
+<hr>
+<h2 id="%E2%9C%85-requisitos">✅ Requisitos</h2>
+<h3 id="python-310-o-superior">Python 3.10 o superior</h3>
+<h3 id="instalar-dependencias">Instalar dependencias:</h3>
+<pre class="hljs"><code><div>pip install -r requirements.txt
+</div></code></pre>
+<h3 id="variables-de-entorno">Variables de entorno:</h3>
+<p>Cada carpeta <code>agente_*</code> contiene su propio <code>.env</code>:</p>
+<ul>
+<li><code>OPENAI_API_KEY</code> (noticias y Telegram)</li>
+<li><code>FRED_API_KEY</code> (macro)</li>
+<li><code>TELEGRAM_TOKEN</code>, <code>TELEGRAM_CHAT_ID</code> (Telegram)</li>
+</ul>
+<hr>
+<h2 id="%E2%9A%99-uso">⚙ Uso</h2>
+<h3 id="ejecuci%C3%B3n-manual-una-sola-vez">Ejecución Manual (una sola vez)</h3>
+<pre class="hljs"><code><div>python ae_ejecucion_unica.py
+</div></code></pre>
+<p>O usando el archivo rápido:</p>
+<pre class="hljs"><code><div>Ejecutar_Asesor.bat
+</div></code></pre>
+<h3 id="ejecuci%C3%B3n-programada-0740-1500-2114">Ejecución Programada (07:40, 15:00, 21:14)</h3>
+<pre class="hljs"><code><div>python ae_programado.py
+</div></code></pre>
+<p>O usando el archivo rápido:</p>
+<pre class="hljs"><code><div>Ejecutar_ae_programado.bat
+</div></code></pre>
+<blockquote>
+<p>Incluye cuenta atrás + llamadas automáticas a los agentes, trading y envío de resumen Telegram.</p>
+</blockquote>
+<h3 id="manual-individual-por-agente">Manual individual por agente:</h3>
+<pre class="hljs"><code><div>python agente_macro/ae_macro_2.0.py
+python agente_noticias/ae_gpt.py
+python agente_tecnico/ae_tecnico.py
+</div></code></pre>
+<h3 id="enviar-explicaci%C3%B3n-al-telegram">Enviar explicación al Telegram</h3>
+<pre class="hljs"><code><div>python agente_telegram/ae_telegram.py
+</div></code></pre>
+<hr>
+<h2 id="%F0%9F%93%88-estrategia-y-algoritmo">📈 Estrategia y Algoritmo</h2>
+<ol>
+<li><code>ae_global.py</code> llama a los tres agentes.</li>
+<li>Cada agente analiza:
+<ul>
+<li><strong>Noticias actuales</strong> utilizando OpenAI GPT (clasificación automática)</li>
+<li><strong>Indicadores económicos recientes</strong> usando:
+<ul>
+<li>Yahoo Finance (datos bursátiles)</li>
+<li><strong>FRED API</strong> (datos económicos de la Reserva Federal de St. Louis)</li>
+</ul>
+</li>
+<li><strong>Análisis técnico</strong> basado en RSI (14) y medias móviles (5, 14) a partir de precios horarios de Yahoo Finance.</li>
+</ul>
+</li>
+<li>Se toma una decisión consolidada por mayoría: <code>LONG</code>, <code>SHORT</code>, <code>NEUTRAL</code>.</li>
+<li><code>bot_mt5.py</code> ejecuta operaciones <strong>directamente en MetaTrader 5</strong> en los siguientes activos:
+<ul>
+<li><code>BTCUSDT</code> (Bitcoin)</li>
+<li><code>SP500</code> (S&amp;P 500 index)</li>
+<li><code>NAS100</code> (Nasdaq 100 index)</li>
+<li><code>XAUUSD+</code> (Oro)</li>
+<li><code>GER40</code> (DAX alemán)</li>
+</ul>
+</li>
+<li><code>ae_telegram.py</code> genera un resumen explicativo de las decisiones usando GPT y lo envía a tu canal privado de Telegram.</li>
+</ol>
+<hr>
+<h2 id="%F0%9F%94%90-seguridad">🔐 Seguridad</h2>
+<ul>
+<li>Cada operación usa <code>magic number</code> único por activo.</li>
+<li>Se cierra la operación anterior si cambia la dirección (ej: de LONG a SHORT).</li>
+<li>Solo tu ID de Telegram recibirá los mensajes.</li>
+</ul>
+<hr>
+<h2 id="%F0%9F%9A%80-futuras-mejoras">🚀 Futuras Mejoras</h2>
+<ul>
+<li>Detección de eventos económicos importantes (FOMC, CPI)</li>
+<li>Dashboard en Flask / Streamlit</li>
+<li>Backtesting histórico</li>
+<li>Generador de prompts automático</li>
+</ul>
+<hr>
+<p>📄 License</p>
+<p>This project is licensed under the MIT License.</p>
+<p>👩‍💼 Author</p>
+<p>Developed by @Rami8612-ai - 2025</p>
+<p>📊 Technologies used</p>
+<p>Python</p>
+<p>-OpenAI GPT API</p>
+<p>-MetaTrader5 API</p>
+<p>-Telegram API</p>
+<p>-Yahoo Finance API</p>
+<p>-FRED (Federal Reserve Economic Data) API</p>
+<p>✨ If you like this project</p>
+<p>Give it a ⭐ star on GitHub!
+Share it, improve it, fork it!</p>
+<p>Built for serious trading and AI-driven market analysis 📈🚀</p>
+
+</body>
+</html>
