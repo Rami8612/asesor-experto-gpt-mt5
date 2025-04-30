@@ -1,4 +1,4 @@
-# 🤖 GPT Expert Advisor + MetaTrader 5
+# 🤖 GPT Expert Advisor + MetaTrader 5 + Telegram
 
 This project is a comprehensive automated financial advisory system that combines:
 - Artificial Intelligence (OpenAI GPT)  
